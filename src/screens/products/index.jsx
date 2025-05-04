@@ -8,7 +8,7 @@ import ProductCard from "./product-card";
 import { fetchProductList } from "../../apis/products";
 import withErrorBoundary from "../../common/hoc/withErrorBoundary";
 
-const ProductSwipeDeck = () => {
+const Products = () => {
   const [productList, setProductList] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -54,4 +54,4 @@ const ProductSwipeDeck = () => {
   );
 };
 
-export default withErrorBoundary(ProductSwipeDeck);
+export default withErrorBoundary(Products);

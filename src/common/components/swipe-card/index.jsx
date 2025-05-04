@@ -85,15 +85,27 @@ const SwipeCard = ({
 
     const direction = getDirection({ dx, dy, dt });
 
+    const screenWidth = 400;
+    const screenHeight = 600;
+
     if (direction) {
       const finalX =
-        mod(dx) > mod(dy) ? (dx >= 0 ? 400 : -400) : 600 * (dx / mod(dy));
+        mod(dx) > mod(dy)
+          ? dx >= 0
+            ? screenWidth
+            : -screenWidth
+          : screenHeight * (dx / mod(dy));
       const finalY =
-        mod(dy) > mod(dx) ? (dy >= 0 ? 600 : -600) : 400 * (dy / mod(dx));
+        mod(dy) > mod(dx)
+          ? dy >= 0
+            ? screenHeight
+            : -screenHeight
+          : screenWidth * (dy / mod(dx));
 
       const finalRotation = dx / 20;
 
       setAnimating("transform 0.1s ease-out");
+
       setPosition({ x: finalX, y: finalY, rotation: finalRotation, direction });
 
       setTimeout(() => {

@@ -1,7 +1,7 @@
-import SwipeDeck from "./screens/products";
+import Products from "./screens/products";
 
 function App() {
-  return <SwipeDeck />;
+  return <Products />;
 }
 
 export default App;
